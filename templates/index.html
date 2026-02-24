@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gold Price Forecast</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+<div class="container">
+    <!-- Custom logo -->
+    <img src="/static/gold_logo.png" alt="Gold Bars Logo" class="logo">
+
+    <h1>Gold Price Forecast</h1>
+    <form action="/forecast" method="post">
+        <label>Forecast Horizon (days):</label>
+        <input type="number" name="horizon" value="30" min="1" required>
+        <button type="submit">Generate Forecast</button>
+    </form>
+    <p class="note">Forecast uses pre-trained model. No need to upload data.</p>
+</div>
+</body>
+</html>

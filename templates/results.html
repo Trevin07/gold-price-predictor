@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Forecast Results</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+<div class="container">
+    <img src="/static/gold_logo.png" alt="Gold Bars Logo" class="logo">
+    <h1>Forecast Results</h1>
+
+    <!-- Interactive plot -->
+    <div>{{ plot_div | safe }}</div>
+
+    <h2>Forecast Table</h2>
+    <table>
+        <tr>
+            {% for key in table[0].keys() %}
+            <th>{{ key }}</th>
+            {% endfor %}
+        </tr>
+        {% for row in table %}
+        <tr>
+            {% for val in row.values() %}
+            <td>{{ val }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+
+    <div style="text-align:center; margin-top: 25px;">
+        <a href="{{ download_path }}" class="btn">Download Forecast Excel</a>
+        <a href="/" class="btn">Back to Home</a>
+    </div>
+</div>
+</body>
+</html>
